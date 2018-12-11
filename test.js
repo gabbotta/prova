@@ -16,4 +16,4 @@ router.post('/:input', (req, res) => {
         });
     };
 });
-
+module.exports = app;
