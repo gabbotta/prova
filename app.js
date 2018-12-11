@@ -1,12 +1,14 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
+const quadrato = require('./quadrato');
 
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.get('/:input', (req, res) => { 
+    const x = req.params.input
+    res.status(200).json({
+    message: 'il quadrato della lunghezza è:'+
+    quadrato.q(x)
+        })  
+});
 
 module.exports = app;
